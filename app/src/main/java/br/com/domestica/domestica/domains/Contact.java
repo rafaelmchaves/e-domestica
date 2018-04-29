@@ -34,11 +34,18 @@ public class Contact implements Serializable {
     @JsonDeserialize(using = LocalDateTimeDeserializer.class)
     @JsonSerialize(using = LocalDateTimeSerializer.class)
     private LocalDateTime createdDate;
+
+    @JsonFormat(shape = JsonFormat.Shape.STRING)
+    @JsonDeserialize(using = LocalDateTimeDeserializer.class)
+    @JsonSerialize(using = LocalDateTimeSerializer.class)
+    private LocalDateTime updateDate;
+
     private Address address;
     private String description;
     private String email;
     private String phone;
     @Indexed
     private String cpf;
+    private boolean attended;
 
 }

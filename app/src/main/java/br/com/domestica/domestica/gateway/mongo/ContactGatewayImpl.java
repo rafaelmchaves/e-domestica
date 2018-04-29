@@ -26,7 +26,18 @@ public class ContactGatewayImpl implements ContactGateway {
     }
 
     @Override
-    public Contact getContact(String userName) {
+    public Contact getContactByName(String userName) {
         return repository.findByUserName(userName);
     }
+
+    @Override
+    public Contact getContactById(String id) {
+        return repository.findOne(id);
+    }
+
+    @Override
+    public Contact update(Contact contact) {
+        return repository.save(contact);
+    }
+
 }

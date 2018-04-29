@@ -7,5 +7,8 @@ import java.util.List;
 public interface ContactGateway {
     void create(Contact contact);
     List<Contact> getContacts();
-    Contact getContact(String userName);
+    Contact getContactByName(String userName);
+    Contact getContactById(String id);
+    Contact update(Contact contact);
+
 }
