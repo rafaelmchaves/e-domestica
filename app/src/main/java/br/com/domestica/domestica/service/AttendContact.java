@@ -14,7 +14,7 @@ public class AttendContact {
     private ContactGateway contactGateway;
 
     public void execute(String id, String description) {
-        Contact contact = contactGateway.getContactByName(id);
+        Contact contact = contactGateway.getContactById(id);
         contact.setDescription(description);
         contact.setAttended(true);
         contact.setUpdateDate(LocalDateTime.now());
