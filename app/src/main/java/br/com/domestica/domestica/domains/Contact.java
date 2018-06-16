@@ -21,7 +21,6 @@ import java.time.LocalDateTime;
 @Setter
 @NoArgsConstructor
 @Document(collection = "contacts")
-@CompoundIndexes({ @CompoundIndex(name = "uniqueTransaction", unique = true, def = "{'userName' : 1, 'cpf' : 1}")})
 public class Contact implements Serializable {
 
     private static final long serialVersionUID = 6741741733066194737L;
@@ -29,7 +28,7 @@ public class Contact implements Serializable {
     @Id
     private String id;
     @Indexed
-    private String userName;
+    private String name;
     @JsonFormat(shape = JsonFormat.Shape.STRING)
     @JsonDeserialize(using = LocalDateTimeDeserializer.class)
     @JsonSerialize(using = LocalDateTimeSerializer.class)
